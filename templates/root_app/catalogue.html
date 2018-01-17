@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block includes %}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+{% for i in catalogue %}
+<div class="card col-md-3" style="width: 18rem;">
+  <img class="card-img-top" src="{{ i.thumbnail.url }}" style="width:100%" alt="Картинки нет...">
+  <div class="card-body">
+    <div class="card-title-wrapper">
+    <h5 class="card-title">{{i.title}}</h5>
+    </div> <!--card-title-wrapper-->
+    <!--<p class="card-text">{{i.description}}</p>-->
+    <a href="/card/{{i.id}}/">Подробнее</a>
+    <a href="/to_basket/{{i.id}}/?next={{request.get_full_path}}" class="btn btn-primary">Купить</a>
+  </div>
+</div>
+{% endfor %}
+</div> <!--row-->
+</div> <!--container-->
+
+{% endblock %}

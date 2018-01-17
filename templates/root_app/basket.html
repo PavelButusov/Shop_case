@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<h1>Товары в корзине:</h1>
+{% if basket_is_empty %}
+<p>В корзине нет товаров...</p>
+{% else %}
+<div class="container">
+<div class="row">
+{% for i in basket %}
+<div class="card col-md-3" style="width: 18rem;">
+  <img class="card-img-top" src="{{ i.thumbnail.url }}" style="width:100%" alt="Картинки нет...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">Количество: {{i.count}} шт.</p>
+  </div>
+</div>
+{% endfor %}
+</div> <!--row-->
+    <a href="/cleanup_basket/?next={{request.get_full_path}}" class="btn btn-primary">Очистить корзину</a>
+</div> <!--container-->
+{% endif %}
+
+{% endblock %}

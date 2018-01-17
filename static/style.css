@@ -1,0 +1,13 @@
+header{
+    border: 1px solid #666;
+}
+header *{
+    display: inline-block;
+}
+.card-title-wrapper{
+    overflow: hidden;
+    height: 64px;
+}
+.card-title{
+    font-size: 16px;
+}

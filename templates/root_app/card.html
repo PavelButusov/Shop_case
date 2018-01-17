@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block includes %}
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+<table width="100%">
+<tr>
+<td rowspan="2" width="30%">
+  <img class="card-img-top" src="{{ product.thumbnail.url }}" style="width:100%" alt="Картинки нет...">
+</td>
+<td>
+<h2>{{ product.title }}</h2>
+</td>
+</tr>
+<tr>
+<td>
+<h3>Описание:</h3>
+<p>{{ product.description }}</p>
+</td>
+</tr>
+</table>
+</div> <!--row-->
+<a href="/to_basket/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-primary">Купить</a>
+</div> <!--container-->
+
+{% endblock %}
