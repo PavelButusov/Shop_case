@@ -6,8 +6,7 @@
 # Скачивание
 ```
 git clone https://github.com/PavelButusov/Shop_case.git
-cd magazin
-git checkout travis
+cd Shop_case
 ```
 
 # Разворачивание сервера
