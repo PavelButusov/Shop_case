@@ -1,19 +1,16 @@
 language: python
 
 python:
-  - 3.5
-
-env:
-  - PIPENV_SHELL_COMPAT=true PIPENV_COLORBLIND=true PIPENV_NOSPIN=true
+  - 3.6
 
 install:
-  - pip install pipenv
-  - pipenv install --dev
-  - pipenv install pytest pytest-django pytest-cov
+  - pip install -r requirements.txt
+  #- pip install mypy
+  - pip install xenon
 
 script:
-  - python -m pytest
-  - mypy --strict-optional hangman
+  #- mypy --strict-optional .
+  - xenon --max-absolute B --max-modules A --max-average A .
   - pytest
 
 after_success:
